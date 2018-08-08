@@ -1,0 +1,22 @@
+question1 :- Voted perceptron has better accuracy than vanilla perceptron because Vanilla perceptron only takes last data to predict whereas in voted perceptron we take weighted average of previous values so prediction is better. This was also observed while running for breast cancer and ionosphere datasets.
+
+
+question2 :-
+
+linear classifier using least square approach is able to classify the data from table1 but not that of table2. But running perceptron after Fisher Linear Discriminant can classify both datasets. This is because in Fisher LDA our goal is to find a suitable w so that when data points are projected over it, the distance between the mean of two classes in projection space is maximised and scaterring(variance) of projected points of both class is to be minimised. This has done is such a way that there exist a perfect line which is perpendicular to the fisher plane and can distinguish between two classes clearly. In least square classifier our goal is to minimise the square of (y-(w^T.x)) which unlike Fisher doesn't care about within and between class distance. Hence in this case the fisher linear classifer perform better than least square approach classifier.
+
+question3:- Features        threshold    accuracy_perceptron    accuracy_cosine
+            763        60                 0.938              0.948
+            853        75                   0.925           0.960
+            946        70                   0.949            0.957
+            1044        75                     0.944              0.954
+            1147        80                   0.952            0.951
+            1258        85                   0.952                  0.951
+            1377        90                   0.960           0.963
+            1509        95                  0.955            0.960
+            1760        100                 0.952             0.960
+
+As an observation, there is a peak in the accuracy for perceptron at 90% threshold where the number of features selected out of 1760 is 1377. The decline in accuracy may be because of overfitting.
+Accuracy for cosine similarity method keeps steadily increasing with increase in number of features selected because of increase in information gained.
+
+
